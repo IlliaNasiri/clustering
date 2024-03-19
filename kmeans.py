@@ -1,5 +1,5 @@
-
 import numpy as np
+from utils import euclidean_distance
 class KMeans():
 
     def __init__(self, n_clusters: int, init: str='random', max_iter = 300):
@@ -21,7 +21,7 @@ class KMeans():
         while iteration < self.max_iter:
             # assign new clustering: create a ( N x (n_clusters) matrix, where element ij represents distance of i-th object to j-th cluster
             # to assign a proper cluster, argmin
-            new_clustering = np.argmin(self.euclidean_distance(X, self.centroids), axis=1)
+            new_clustering = np.argmin(euclidean_distance(X, self.centroids), axis=1)
             # check if the difference of the new clustering and the old one is 0 (convergence)
             if np.count_nonzero(new_clustering - clustering) == 0 :
                 break
@@ -60,7 +60,7 @@ class KMeans():
 
             for i in range( self.n_clusters - 1 ):
                 # compute the distance from existing centroids to everydatapoint, take the smallest distance
-                distances = np.min( self.euclidean_distance(X, self.centroids), axis=1)
+                distances = np.min(euclidean_distance(X, self.centroids), axis=1)
                 # normalize the distance vectorm, so they add up to one, and could represent a probability
                 prob = distances / (np.sum(distances))
                 # choose the next centroid, apped it to centroids
@@ -71,26 +71,8 @@ class KMeans():
         else:
             raise ValueError('Centroid initialization method should either be "random" or "kmeans++"')
 
-    # for X1 (MxD) and X2 (N * D), dist (M * N)
-    def euclidean_distance(self, X1:np.ndarray, X2:np.ndarray):
-        """
-        Computes the Euclidean distance between all pairs (x,y) where x is a row in X1 and y is a row in X2.
-        Tip: Using vectorized operations can hugely improve the efficiency here.
-        :param X1:
-        :param X2:
-        :return: Returns a matrix `dist` where `dist_ij` is the distance between row i in X1 and row j in X2.
-        """
-        # For broadcasting purposes, need to add dimensions to X1, X2
-        X1 = np.expand_dims(X1, axis=2)
-        X2 = np.expand_dims(X2.T, axis=0)
-        # First, create a 3D matrix (X1 objects, features, X2 objects), where all the differences between X1, X2 are stored
-        # square the differences, add the up along the axis representding features (axis = 1), then take the square root
-        dist = np.sqrt(np.sum((X2 - X1) ** 2, axis=1))
-
-        return dist
-
     def silhouette(self, clustering: np.ndarray, X: np.ndarray):
-        dist_table = self.euclidean_distance(X, self.centroids)
+        dist_table = euclidean_distance(X, self.centroids)
         # for every datapoint, compute a
         a = dist_table[np.arange(dist_table.shape[0]), clustering]
         # for every datapoint, compute b
