@@ -1,7 +1,5 @@
 
 import numpy as np
-
-
 class KMeans():
 
     def __init__(self, n_clusters: int, init: str='random', max_iter = 300):
