@@ -1,10 +1,9 @@
 import numpy as np
 from utils import euclidean_distance
-class KMeans():
+class KMeans:
 
     def __init__(self, n_clusters: int, init: str='random', max_iter = 300):
         """
-
         :param n_clusters: number of clusters
         :param init: centroid initialization method. Should be either 'random' or 'kmeans++'
         :param max_iter: maximum number of iterations
