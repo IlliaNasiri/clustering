@@ -1,5 +1,5 @@
 import numpy as np
-from utils import euclidean_distance
+from clustering.utils import euclidean_distance
 
 class DBSCAN:
     def __init__(self, epsilon, min_samples):

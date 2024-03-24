@@ -1,5 +1,5 @@
 import numpy as np
-from utils import euclidean_distance
+from clustering.utils import euclidean_distance
 class KMeans:
 
     def __init__(self, n_clusters: int, init: str='random', max_iter = 300):
