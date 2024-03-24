@@ -1,10 +1,11 @@
 # Implementation and Comparison of KMeans, KMneas++, DBSCAN
 
 ## Contents:
-[Motivation](#motivation) 
+1. [Motivation](#motivation) 
 
-[How to use?](#how-to-use)
-
+2. [How to use?](#how-to-use)
+  2.1. [Installation](how-to-install )
+  2.2. 
 
 ## Motivation
 
@@ -17,6 +18,7 @@ Assuming you have **pip**:
 ```console
 pip install clustering-project
 ```
+### <a name="how-to-install"> </a>
 
 ## How to use?
 
