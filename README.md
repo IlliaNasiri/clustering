@@ -3,8 +3,8 @@
 ## Contents:
 1. [Motivation](#motivation) 
 
-2. [How to use?](#how-to-use)
-  2.1. [Installation](how-to-install )
+2. [How to use?](#how-to-use) <br>
+  2.1. [Installation](how-to-install ) <br>
   2.2. 
 
 ## Motivation
