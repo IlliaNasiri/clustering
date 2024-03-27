@@ -89,5 +89,16 @@ kmeans = KMeans(n_clusters, init)
 clustering = kmeans.fit(X)
 ```
 
-## Demonstration of strengths and weaknesses of the implemented algorithms
+## Demonstration
 ### <a name="demo"> </a>
+
+### Here is a dummy dataset, and resulting clustering from DBSCAN and K-Means:
+### DBSCAN: 
+ ![image](https://github.com/IlliaNasiri/clustering/assets/135656013/8d7a1d7b-c328-487a-9710-5f25e4acb599)
+
+### KMeans:
+Note that KMeans does not split the clusters on this dataset well because the centers of mass of the two groups of points co-align. As a result we get not a very good clustering. <br>
+![image](https://github.com/IlliaNasiri/clustering/assets/135656013/dfb5042f-2883-4bc2-823b-ff86f23b39f2)
+
+
+
