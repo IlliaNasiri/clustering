@@ -6,7 +6,7 @@
 3. [How to use?](#how-to-use) <br>
 - 3.1. [DBSCAN](#DBSCAN)
 - 3.2. [K-Means](#K-Means)
-- 3.3. [K-Means++](#K-Means++)
+- 3.3. [K-Means++](#K-MeansPlus)
 
 ## Motivation
 
@@ -76,7 +76,7 @@ kmeans = KMeans(n_clusters)
 clustering = kmeans.fit(X)
 ```
 
-### <a name="K-Means++"> </a>
+### <a name="K-MeansPlus"> </a>
 
 Here is an example of how to use KMeans++:
 ```python
